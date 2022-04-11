@@ -1,0 +1,48 @@
+
+cd '/usr' ; /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
+sudo systemctl enable mysqld
+sudo systemctl start mysqld
+sudo systemctl status mysqld
+systemctl status mysql.service
+
+class Endereco(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    endereco = db.Column(db.String(80), unique=True, nullable=False)
+    bairro = db.Column(db.String(80), unique=True, nullable=False)
+    cidade = db.Column(db.String(80), unique=True, nullable=False)
+    estado = db.Column(db.String(80), unique=True, nullable=False)
+    user_id_fk = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    def __repr__(self):
+        return '<Endereco %r>' % self.endereco
+
+class Chat(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    mensagem = db.Column(db.String(250), unique=True, nullable=False)
+    user1_fk = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user2_fk = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    
+    def __repr__(self):
+        #return '<Endereco %r>' % self.endereco
+
+
+
+
+
+
+
+# class Login:
+#     def hello_world():
+#         print(request.headers)
+#         if autenticate(request.headers.get('token')):
+#             print(request.form)
+#             user = request.form.get('user')
+#             #print(request.form.get('batatinha'))
+#             password = request.form.get('pass') 
+#             print(request.headers)
+#             return Login.login(user,password)
+#             #return 'shuu'
+#         else:
+#             return 'deu ruim'
+
+
