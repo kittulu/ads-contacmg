@@ -1,5 +1,5 @@
 from flask import Flask, request
-from view.User import Login, Register
+from View import Login, Register, ViewDemands, ViewCategories
 from application import App
 
 app = App.app()
@@ -26,4 +26,17 @@ def register():
     psw =r_json['psw'] 
     #print (request.json)
     return Register.register(user, email, cpf, psw)
-   
+
+@app.route("/demands", methods = ['GET'])
+def demands():
+    return ViewDemands.get_demands()
+
+@app.route("/categories", methods = ['GET'])
+def categories():
+    return ViewCategories.get_categories()
+
+@app.route("/categories", methods = ['POST'])
+def category():
+    r_json = request.json
+    id_cat = r_json['id']
+    return ViewCategories.get_by_categories(id_cat)
