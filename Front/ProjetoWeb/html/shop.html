@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Multikart">
+  <meta name="keywords" content="Multikart">
+  <meta name="author" content="Multikart">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <title>Multikart PWA App</title>
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <meta name="theme-color" content="#ff4c3b" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="multikart">
+  <meta name="msapplication-TileImage" content="assets/images/favicon.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!--Google font-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" id="rtl-link" type="text/css" href="assets/css/vendors/bootstrap.css">
+
+  <!-- slick css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick.css">
+
+  <!-- pricing slider css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/pricing-slider.css">
+
+  <!-- iconly css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconly.css">
+
+  <!-- Theme css -->
+  <link rel="stylesheet" id="change-link" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+  <!-- loader strat -->
+  <div class="loader">
+    <span></span>
+    <span></span>
+  </div>
+  <!-- loader end -->
+
+
+  <!-- header start -->
+  <header>
+    <div class="back-links">
+      <a href="index.php">
+        <i class="iconly-Arrow-Left icli"></i>
+        <div class="content">
+          <h2>Women Collection</h2>
+          <h6>2050 Products</h6>
+        </div>
+      </a>
+    </div>
+    <div class="header-option">
+      <ul>
+        <li>
+          <a href="wishlist.html"><i class="iconly-Heart icli"></i></a>
+        </li>
+        <li>
+          <a href="cart.html"><i class="iconly-Buy icli"></i></a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <!-- header end -->
+
+
+  <!-- search panel start -->
+  <div class="search-panel top-space xl-space px-15">
+    <div class="search-bar">
+      <input class="form-control form-theme" placeholder="Search">
+      <i class="iconly-Search icli search-icon"></i>
+      <i class="iconly-Camera icli camera-icon"></i>
+    </div>
+    <div class="filter-btn" data-bs-toggle="modal" data-bs-target="#filterModal">
+      <i class="iconly-Filter icli"></i>
+    </div>
+  </div>
+  <!-- search panel end -->
+
+
+  <!-- products start -->
+  <section class="px-15 lg-t-space">
+    <div class="row gy-3 gx-3">
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img src="assets/images/products/1.jpg" alt="" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+            <label>new</label>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img src="assets/images/products/2.jpg" alt="" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img alt="" src="assets/images/products/3.jpg" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img alt="" src="assets/images/products/4.jpg" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img alt="" src="assets/images/products/5.jpg" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+            <label>new</label>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img src="assets/images/products/6.jpg" alt="" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img alt="" src="assets/images/products/7.jpg" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img alt="" src="assets/images/products/8.jpg" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img alt="" src="assets/images/products/9.jpg" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="product-box ratio_square">
+          <div class="img-part">
+            <a href="product.html"><img alt="" src="assets/images/products/10.jpg" class="img-fluid bg-img"></a>
+            <div class="wishlist-btn">
+              <i class="iconly-Heart icli"></i>
+              <i class="iconly-Heart icbo"></i>
+              <div class="effect-group">
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+                <span class="effect"></span>
+              </div>
+            </div>
+          </div>
+          <div class="product-content">
+            <ul class="ratings">
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo"></i></li>
+              <li><i class="iconly-Star icbo empty"></i></li>
+            </ul>
+            <a href="product.html">
+              <h4>Blue Denim Jacket</h4>
+            </a>
+            <div class="price">
+              <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- products end -->
+
+
+  <!--  filter modal start  -->
+  <div class="modal filter-modal" id="filterModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Filters</h2>
+          <a href="javascript:void(0)" data-bs-dismiss="modal"><img src="assets/svg/x-dark.svg" class="img-fluid" alt=""></a>
+        </div>
+        <div class="modal-body">
+          <div class="filter-box">
+            <h2 class="filter-title">Sort By:</h2>
+            <div class="filter-content">
+              <select class="form-select form-control form-theme" aria-label="Default select example">
+                <option selected>Recommended</option>
+                <option value="1">Popularity</option>
+                <option value="2">What's New</option>
+                <option value="3">Price: High to Low</option>
+                <option value="4">Price: Low to High</option>
+                <option value="5">Customer rating</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-box">
+            <h2 class="filter-title">Brand:</h2>
+            <div class="filter-content">
+              <ul class="row filter-row g-3">
+                <li class="col-6">
+                  <div class="filter-col">Here & Now</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">Zara</div>
+                </li>
+                <li class="col-6 active">
+                  <div class="filter-col">Mast & harbour</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">Tokyo talkies</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">Vogue</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">gucci</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-box">
+            <h2 class="filter-title">Size:</h2>
+            <div class="filter-content">
+              <ul class="row filter-row g-3">
+                <li class="col-4">
+                  <div class="filter-col">small</div>
+                </li>
+                <li class="col-4">
+                  <div class="filter-col">Medium</div>
+                </li>
+                <li class="col-4">
+                  <div class="filter-col">large</div>
+                </li>
+                <li class="col-4">
+                  <div class="filter-col">XL</div>
+                </li>
+                <li class="col-4">
+                  <div class="filter-col">2XL</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-box">
+            <h2 class="filter-title">Price:</h2>
+            <div class="filter-content">
+              <div class="range-slider pricing-slider">
+                <input type="text" class="js-range-slider" value="" />
+              </div>
+            </div>
+          </div>
+          <div class="filter-box">
+            <h2 class="filter-title">Occasion:</h2>
+            <div class="filter-content">
+              <ul class="row filter-row g-3">
+                <li class="col-6">
+                  <div class="filter-col">Casual</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">sports</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">beach wear</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">lounge wear</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">formal</div>
+                </li>
+                <li class="col-6">
+                  <div class="filter-col">party</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="filter-box">
+            <h2 class="filter-title">Colors:</h2>
+            <div class="filter-content">
+              <ul class="filter-color">
+                <li>
+                  <div class="color-box light-purple"></div>
+                </li>
+                <li class="active">
+                  <div class="color-box light-grey"></div>
+                </li>
+                <li>
+                  <div class="color-box blue-purple"></div>
+                </li>
+                <li>
+                  <div class="color-box light-orange"></div>
+                </li>
+                <li>
+                  <div class="color-box dark-pink"></div>
+                </li>
+                <li>
+                  <div class="color-box green-blue"></div>
+                </li>
+                <li>
+                  <div class="color-box green"></div>
+                </li>
+                <li>
+                  <div class="color-box blue"></div>
+                </li>
+                <li>
+                  <div class="color-box yellow"></div>
+                </li>
+                <li>
+                  <div class="color-box light-red"></div>
+                </li>
+                <li>
+                  <div class="color-box light-purple2"></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="javascript:void(0)" class="reset-link" data-bs-dismiss="modal">RESET</a>
+          <a href="javascript:void(0)" class="btn btn-solid" data-bs-dismiss="modal">apply filters</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- filter modal end -->
+
+
+  <!-- panel space start -->
+  <section class="panel-space"></section>
+  <!-- panel space end -->
+
+
+  <!-- bottom panel start -->
+  <div class="bottom-panel">
+    <ul>
+      <li>
+        <a href="index.php">
+          <div class="icon">
+            <i class="iconly-Home icli"></i>
+            <i class="iconly-Home icbo"></i>
+          </div>
+          <span>home</span>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <div class="icon">
+            <i class="iconly-Category icli"></i>
+            <i class="iconly-Category icbo"></i>
+          </div>
+          <span>category</span>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <div class="icon">
+            <i class="iconly-Buy icli"></i>
+            <i class="iconly-Buy icbo"></i>
+          </div>
+          <span>cart</span>
+        </a>
+      </li>
+      <li>
+        <a href="wishlist.html">
+          <div class="icon">
+            <i class="iconly-Heart icli"></i>
+            <i class="iconly-Heart icbo"></i>
+          </div>
+          <span>wishlist</span>
+        </a>
+      </li>
+      <li>
+        <a href="profile.html">
+          <div class="icon">
+            <i class="iconly-Profile icli"></i>
+            <i class="iconly-Profile icbo"></i>
+          </div>
+          <span>profile</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- bottom panel end -->
+
+
+  <!-- latest jquery-->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+  <!-- Bootstrap js-->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- pricing slider js -->
+  <script src="assets/js/pricing-slider.js"></script>
+
+  <!-- Slick js-->
+  <script src="assets/js/slick.js"></script>
+
+  <!-- script js -->
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

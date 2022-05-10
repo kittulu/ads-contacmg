@@ -40,3 +40,6 @@ def category():
     r_json = request.json
     id_cat = r_json['id']
     return ViewCategories.get_by_categories(id_cat)
+
+
+#https://bastter.com/mercado/forum/873006/extra-22--projeto-web-parte-3--fazendo-upload-de-arquivos-de-imagens-e-renderizando-as-imagens

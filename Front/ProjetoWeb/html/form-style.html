@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multikart">
+    <meta name="keywords" content="Multikart">
+    <meta name="author" content="Multikart">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <title>Multikart PWA App</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    <meta name="theme-color" content="#ff4c3b" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="multikart">
+    <meta name="msapplication-TileImage" content="assets/images/favicon.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" id="rtl-link" type="text/css" href="assets/css/vendors/bootstrap.css">
+
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick.css">
+
+    <!-- iconly css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconly.css">
+
+    <!-- Theme css -->
+    <link rel="stylesheet" id="change-link" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- loader strat -->
+    <div class="loader">
+        <span></span>
+        <span></span>
+    </div>
+    <!-- loader end -->
+
+
+    <!-- header start -->
+    <header>
+        <div class="back-links">
+            <a href="pages.html">
+                <i class="iconly-Arrow-Left icli"></i>
+                <div class="content">
+                    <h2>Form Style</h2>
+                </div>
+            </a>
+        </div>
+    </header>
+    <!-- header end -->
+
+
+    <!-- section start -->
+    <section class="px-15 top-space ratio_45 pt-0">
+        <div>
+            <h2 class="page-title pb-2">Input Style</h2>
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control" id="one" placeholder="Full Name">
+                <label for="one">Full Name</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="password" class="form-control" id="one1" placeholder="password">
+                <label for="one1">Password</label>
+            </div>
+            <div class="form-floating mb-4">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option value="1">Select 1</option>
+                    <option value="2">Select 2</option>
+                    <option value="3">Select 3</option>
+                </select>
+                <label for="floatingSelect">Selection</label>
+            </div>
+        </div>
+        <div>
+            <h2 class="page-title">Radio Box</h2>
+            <form class="mb-2">
+                <div class="d-flex align-items-center mb-2">
+                    <input checked class="radio_animated" type="radio" name="filter" id="all" value="all">
+                    <label for="all" class="content-color">Default Radio</label>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <input class="radio_animated" type="radio" name="filter" id="open" value="open">
+                    <label for="open" class="content-color">Default Radio 1</label>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <input class="radio_animated" type="radio" name="filter" id="return" value="return">
+                    <label for="return" class="content-color">Default Radio 2</label>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <input class="radio_animated" type="radio" name="filter" id="cancelled" value="cancelled">
+                    <label for="cancelled" class="content-color">Default Radio 3</label>
+                </div>
+            </form>
+            <h2 class="page-title mt-4">Checkbox</h2>
+            <form>
+                <div class="checkbox_animated">
+                    <div class="d-flex align-items-center mb-2">
+                        <input type="checkbox" name="address" id="onecheckbox" value="male" checked>
+                        <label for="onecheckbox">Checkbox Option 1</label>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <input type="checkbox" name="address" id="onecheckbox2" value="male">
+                        <label for="onecheckbox2">Checkbox Option 2</label>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <input type="checkbox" name="address" id="onecheckbox3" value="male">
+                        <label for="onecheckbox3">Checkbox Option 3</label>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <input type="checkbox" name="address" id="onecheckbox4" value="male">
+                        <label for="onecheckbox4">Checkbox Option 4</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- section end -->
+
+
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Slick js-->
+    <script src="assets/js/slick.js"></script>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
