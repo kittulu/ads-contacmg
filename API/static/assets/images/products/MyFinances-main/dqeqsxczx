@@ -1,0 +1,26 @@
+[33mcommit 5cb3533aeb242ca94349fbb51c584ced7ec1020e[m[33m ([m[1;36mHEAD -> [m[1;32m20220326-fabio-feat-service[m[33m)[m
+Author: aeon <aeonhorus@outlook.com>
+Date:   Sat Mar 26 15:27:41 2022 -0400
+
+    feat: adiciona service base
+
+[33mcommit cc3b388e2e481e761d266979266a8edb47ad9417[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 1b6b27e 39f60ef
+Author: FabioVLucena <88754929+FabioVLucena@users.noreply.github.com>
+Date:   Sat Mar 26 15:14:46 2022 -0400
+
+    Merge pull request #1 from adsunesc/20220326-fabio-feat-repositories
+    
+    20220326-fabio-feat-repositorios
+
+[33mcommit 39f60efc9d618b1fc3485d9aff5ce8c0960c4c96[m[33m ([m[1;31morigin/20220326-fabio-feat-repositories[m[33m, [m[1;32m20220326-fabio-feat-repositories[m[33m)[m
+Author: aeon <aeonhorus@outlook.com>
+Date:   Sat Mar 26 14:50:47 2022 -0400
+
+    feat: adiciona repositorios
+
+[33mcommit 1b6b27e8bade8a83a02075f29be1b5e5ae934d8f[m
+Author: aeon <aeonhorus@outlook.com>
+Date:   Sat Mar 26 14:27:20 2022 -0400
+
+    adiciona projeto base

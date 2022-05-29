@@ -27,6 +27,17 @@ class User(db.Model):
     #endereco = db.relationship('Endereço', backref='Usuário', lazy=True)
     # def __repr__(self):
     #     return '<User %r>' % self.username
+    def is_authenticated(self):
+        return True
+
+    def is_active(self):   
+        return True           
+
+    def is_anonymous(self):
+        return False          
+
+    def get_id(self):         
+        return str(self.id)
 
 @dataclass
 class Category(db.Model):
@@ -85,9 +96,9 @@ class Proposal(db.Model):
 @dataclass
 class Images(db.Model):
     id:int
-    img:LargeBinary##***********observar aqui
+    
     id = db.Column(db.Integer, primary_key=True, nullable=False)
-    img = Column(LargeBinary(length=(2**32)-1),nullable=False)
+   
     user_fk = db.relationship('User', backref='Images', lazy=True)
     category = db.relationship('Category', backref='Images', lazy=True)
     proposal = db.relationship('Proposal', backref='Images', lazy=True)
