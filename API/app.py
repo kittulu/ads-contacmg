@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, flash
 from View import UserId, Login, Register, ViewDemands, ViewCategories
 from application import App
 from flask_login import LoginManager, login_required,current_user,login_user, logout_user,login_required
@@ -31,7 +31,7 @@ def login():
             login_user(query_id)
             return redirect("/", code=302)
         else:
-            print('login_fail')
+            flash('Login Fail.')
             return redirect("/login", code=302)
     else:
         return render_template('login.html')
@@ -67,13 +67,13 @@ def category():
 @app.route("/cadastrodemanda", methods = ['GET'])
 @login_required
 def cadastrodemandas():
-    return
+    return  render_template('cadservice.html')
 
-@app.route("/cadastrodemanda", methods = ['POST'])
-@login_required
-def cadastrodemandas():
-    r_json = request.json
-    id_cat = r_json['']##request aqui
-    return ViewCategories.get_by_categories(id_cat)
+# @app.route("/cadastrodemanda", methods = ['POST'])
+# @login_required
+# def cadastrodemandas():
+#     r_json = request.json
+#     id_cat = r_json['']##request aqui
+#     return ViewCategories.get_by_categories(id_cat)
     
-#https://bastter.com/mercado/forum/873006/extra-22--projeto-web-parte-3--fazendo-upload-de-arquivos-de-imagens-e-renderizando-as-imagens
+# #https://bastter.com/mercado/forum/873006/extra-22--projeto-web-parte-3--fazendo-upload-de-arquivos-de-imagens-e-renderizando-as-imagens
