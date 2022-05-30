@@ -58,33 +58,40 @@
     <!-- login section start -->
     <section class="form-section px-15 top-space section-b-space">
         <h1>Ei, <br>Cadastre-se</h1>
-        <form>
+        <form method="POST">
             <div class="form-floating mb-4">
-                <input type="text" class="form-control" id="one" placeholder="Nome">
+                <input type="text" class="form-control" name="name" id="one" placeholder="Nome" required>
                 <label for="one">Nome</label>
             </div>
 
             <div class="form-floating mb-4">
-                <input type="text" class="form-control" id="one" placeholder="Sobrenome">
+                <input type="text" class="form-control" name="lname" id="one" placeholder="Sobrenome" required>
                 <label for="one">Sobrenome</label>
             </div>
             <div class="form-floating mb-4">
-                <input type="text" class="form-control" name="telefone" placeholder="Telefone">
-                <label>Telefone</label>
+                <input type="email" class="form-control" name="email" placeholder="Telefone" required>
+                <label>E-mail</label>
             </div>  
             <div class="form-floating mb-4">
-                <input type="email" class="form-control" id="two" placeholder="Email">
-                <label for="two">E-mail</label>
-            </div>
+                <input type="text" class="form-control" name="cpf" placeholder="Telefone" required>
+                <label>CPF</label>
+            </div> 
             <div class="form-floating mb-4">
-                <input type="password" id="txtPassword" class="form-control" placeholder="Senha">
+                <input type="password" id="txtPassword" name="psw" class="form-control" placeholder="Senha" required> 
                 <label>Senha</label>
                 <div id="btnToggle" class="password-hs">
                     <i id="eyeIcon" class="iconly-Hide icli hide"></i>
                 </div>
             </div>
-            <a href="#" class="btn btn-solid w-100">Cadastre-se</a>
+            {% if error %}
+            <div class="">
+            <small style="color: #ff0000 ;">{{error}}</small>
+            </div>
+            <br>
+            {% endif %}
+            <input type="submit" value="Cadastre-se" class="btn btn-solid w-100" >
         </form>
+
         <div class="or-divider">
             <span>Ou cadastre-se com</span>
         </div>

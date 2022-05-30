@@ -26,16 +26,15 @@ class Login:
             return 'shuu'
         except IntegrityError as e:
             #print(f"(1062, \"Duplicate entry '{user}' for key 'username'\")")
-            #print(e.__cause__)
-            if str(e.__cause__) == f"""(1062, "Duplicate entry '{email}' for key 'email'")""":
-                return "Email Exists"
-            elif str(e.__cause__) == f"""(1062, "Duplicate entry '{cpf}' for key 'cpf'")""":
-                return "cpf Exists"
-            return "ERRU"
+            print(e.__cause__)
+            if str(e.__cause__) == f"""UNIQUE constraint failed: user.email""":
+                return "Email já cadastrado."
+            elif str(e.__cause__) == f"""UNIQUE constraint failed: user.cpf""":
+                return "Cpf já cadastrado."
+            return "Erro no sistema! entre em contato com o administrador."
 
 class ViewDemands:
     def get_demands():
-
         query = Demand.query.filter(Demand.user_id==User.id)\
             .join(User, User.id==Demand.user_id)\
             .add_columns(User.first_name)\
@@ -47,8 +46,11 @@ class ViewDemands:
         query = Demand.query.filter(Demand.id == id)
         return query[0]
 
-    def post_demand():
-        pass
+    def post_demand(demand_name,desc,category_id,user_id):
+        db = DB.db()
+        query = Demand(demand_name=demand_name,desc=desc,category_id=category_id,user_id=user_id)
+        db.session.add(query)
+        db.session.commit()
 
 class ViewCategories:
     def get_categories():

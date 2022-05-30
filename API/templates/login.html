@@ -69,6 +69,12 @@
             <div class="text-end mb-4">
                 <a href="#" class="theme-color">Esqueceu sua senha?</a>
             </div>
+            {% if error %}
+            <div class="">
+            <small style="color: #ff0000 ;">{{error}}</small>
+            </div>
+            <br>
+            {% endif %}
             <input type="submit" value="enviar" class="btn btn-solid w-100" class="form-control">
         </form>
         <div class="or-divider">
