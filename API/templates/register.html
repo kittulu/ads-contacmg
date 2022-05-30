@@ -10,7 +10,7 @@
     <meta name="author" content="ContaComigo">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="assets/images/icon.png" type="image/x-icon" />
-    <title>ContaComigo!</title>
+    <title>ContaComigo</title>
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
     <meta name="theme-color" content="#ff4c3b" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,32 +47,46 @@
     </div>
     <!-- loader end -->
 
+
     <!-- top bar start -->
     <div class="topbar-section">
-        <a href="index.php"><img src="assets/images/logomain.png" class="img-fluid main-logo" alt=""></a>
+        <a href="index.php"><img src="assets/images/logomain.png" class="img-fluid main-logo" alt=""> </a>
     </div>
     <!-- top bar end -->
 
 
     <!-- login section start -->
     <section class="form-section px-15 top-space section-b-space">
-        <h1>Ei, <br>faça seu login</h1>
-        <form method="POST">
+        <h1>Ei, <br>Cadastre-se</h1>
+        <form>
             <div class="form-floating mb-4">
-                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
-                <label for="one">E-mail</label>
+                <input type="text" class="form-control" id="one" placeholder="Nome">
+                <label for="one">Nome</label>
+            </div>
+
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control" id="one" placeholder="Sobrenome">
+                <label for="one">Sobrenome</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control" name="telefone" placeholder="Telefone">
+                <label>Telefone</label>
             </div>  
-            <div class="form-floating mb-2">
-                <input type="password" class="form-control" name="psw" id="psw" placeholder="Senha">
-                <label for="two">Senha</label>
+            <div class="form-floating mb-4">
+                <input type="email" class="form-control" id="two" placeholder="Email">
+                <label for="two">E-mail</label>
             </div>
-            <div class="text-end mb-4">
-                <a href="#" class="theme-color">Esqueceu sua senha?</a>
+            <div class="form-floating mb-4">
+                <input type="password" id="txtPassword" class="form-control" placeholder="Senha">
+                <label>Senha</label>
+                <div id="btnToggle" class="password-hs">
+                    <i id="eyeIcon" class="iconly-Hide icli hide"></i>
+                </div>
             </div>
-            <input type="submit" value="enviar" class="btn btn-solid w-100" class="form-control">
+            <a href="#" class="btn btn-solid w-100">Cadastre-se</a>
         </form>
         <div class="or-divider">
-            <span>Ou faça login com</span>
+            <span>Ou cadastre-se com</span>
         </div>
         <div class="social-auth">
             <ul>
@@ -88,8 +102,8 @@
             </ul>
         </div>
         <div class="bottom-detail text-center mt-3">
-            <h4 class="content-color">Se você é novo, <a class="title-color text-decoration-underline"
-                    href="/register">Crie uma conta</a></h4>
+            <h4 class="content-color">Você já tem uma conta? <a class="title-color text-decoration-underline"
+                    href="login.html">Faça login</a></h4>
         </div>
     </section>
     <!-- login section end -->
@@ -109,6 +123,9 @@
 
     <!-- Slick js-->
     <script src="assets/js/slick.js"></script>
+
+    <!-- password hide show js -->
+    <script src="assets/js/password-hs.js"></script>
 
     <!-- Filter js -->
     <script src="assets/js/filter.js"></script>

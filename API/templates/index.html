@@ -9,14 +9,14 @@
   <meta name="keywords" content="ContaComigo"> <!--palavras-chave-->
   <meta name="author" content="Conta Comigo!"> <!--autor-->
   <link rel="manifest" href="manifest.json"> <!--indica que o recurso de destino é um manifesto de aplicativo Web-->
-  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" /> <!--icone da página-->
+  <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon" /> <!--icone da página-->
   <title>Conta Comigo!</title>
-  <link rel="apple-touch-icon" href="assets/images/favicon.png"> <!--icone da página para app apple-->
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png"> <!--icone da página para app apple-->
   <meta name="theme-color" content="#ff4c3b" /> <!--tema de cor-->
   <meta name="apple-mobile-web-app-capable" content="yes"> <!-- -->
   <meta name="apple-mobile-web-app-status-bar-style" content="black"> <!-- -->
   <meta name="apple-mobile-web-app-title" content="Conta Comigo!"> <!-- -->
-  <meta name="msapplication-TileImage" content="assets/images/favicon.png"> <!-- -->
+  <meta name="msapplication-TileImage" content="/assets/images/favicon.png"> <!-- -->
   <meta name="msapplication-TileColor" content="#FFFFFF"> <!-- -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- -->
 
@@ -24,17 +24,17 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
   <!-- bootstrap css -->
-  <link rel="stylesheet" id="rtl-link" type="text/css" href="assets/css/vendors/bootstrap.css">
+  <link rel="stylesheet" id="rtl-link" type="text/css" href="/assets/css/vendors/bootstrap.css">
 
   <!-- slick css -->
-  <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick-theme.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/vendors/slick.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/vendors/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/vendors/slick.css">
 
   <!-- iconly css -->
-  <link rel="stylesheet" type="text/css" href="assets/css/vendors/iconly.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/vendors/iconly.css">
 
   <!-- Theme css -->
-  <link rel="stylesheet" id="change-link" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" id="change-link" type="text/css" href="/assets/css/style.css">
 
 </head>
 
@@ -49,7 +49,7 @@
 <!-- header start -->
 <header> 
   <a href="/" class="brand-logo">
-    <img src="assets/images/logomain.png" class="img-fluid main-logo" alt="">
+    <img src="/assets/images/logomain.png" class="img-fluid main-logo" alt="">
   </a>
   <div class="header-option">
     <ul>
@@ -58,7 +58,7 @@
       </li>
       <li class="nav-bar">
         <a href="/cadastrodemanda">       
-          <img src="assets/svg/plus-square.svg" class="img-fluid" alt="">
+          <img src="/assets/svg/plus-square.svg" class="img-fluid" alt="">
 </a>
       </li>
     </ul>
@@ -72,8 +72,8 @@
     <ul class="category-slide">
     {% for cat in cats %}
       <li>
-        <a href="#" class="category-box">
-          <img src="assets/images/top-category/{{cat.name_cat}}.png" class="img-fluid" alt="">
+        <a href="/{{cat.id}}" class="category-box">
+          <img src="/assets/images/top-category/{{cat.name_cat}}.png" class="img-fluid" alt="">
           <h4>{{cat.name_cat}}</h4>
         </a>
       </li>
@@ -90,7 +90,7 @@
     <div class="home-slider slick-default theme-dots">
       <div>
         <div class="slider-box">
-          <img src="assets/images/home-slider/slide1.jpg" class="img-fluid bg-img" alt="">
+          <img src="/assets/images/home-slider/slide1.jpg" class="img-fluid bg-img" alt="">
           <div class="slider-content">
             <div>
               <h2>MELHORES AVALIAÇÕES</h2>
@@ -101,7 +101,7 @@
       </div>
       <div>
         <div class="slider-box">
-          <img src="assets/images/home-slider/slide2.jpg" class="img-fluid bg-img" alt="">
+          <img src="/assets/images/home-slider/slide2.jpg" class="img-fluid bg-img" alt="">
           <div class="slider-content">
             <div>
               <h2>SUA CASA LIMPA</h2>
@@ -127,11 +127,11 @@
         <div class="col-12">
           <div class="product-inline">
             <a href="#">
-              <img src="assets/images/products/01.jpg" class="img-fluid" alt="">
+              <img src="/assets/images/products/01.jpg" class="img-fluid" alt="">
             </a>
             <div class="product-inline-content">
               <div>
-                <a href="#">
+                <a href="demand/{{dem.id}}">
                   <h4>{{dem.demand_name}}</h4>
                 </a>
                 <h5>{{dem.desc}}</h5>
@@ -178,7 +178,7 @@
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     <div class="offcanvas-body small">
       <div class="app-info">
-        <img src="assets/images/logo/logo48.png" class="img-fluid" alt="">
+        <img src="/assets/images/logo/logo48.png" class="img-fluid" alt="">
         <div class="content">
           <h3>Conta comigo!</h3>
           <a href="#">www.contacomigo.com</a>
@@ -191,25 +191,25 @@
 
 
   <!-- latest jquery-->
-  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="/assets/js/jquery-3.3.1.min.js"></script>
 
   <!-- Bootstrap js-->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
 
   <!-- Slick js-->
-  <script src="assets/js/slick.js"></script>
+  <script src="/assets/js/slick.js"></script>
 
   <!-- Slick js-->
-  <script src="assets/js/homescreen-popup.js"></script>
+  <script src="/assets/js/homescreen-popup.js"></script>
 
   <!-- timer js-->
-  <script src="assets/js/timer.js"></script>
+  <script src="/assets/js/timer.js"></script>
 
   <!-- offcanvas modal js -->
-  <script src="assets/js/offcanvas-popup.js"></script>
+  <script src="/assets/js/offcanvas-popup.js"></script>
 
   <!-- script js -->
-  <script src="assets/js/script.js"></script>
+  <script src="/assets/js/script.js"></script>
 
 </body>
 

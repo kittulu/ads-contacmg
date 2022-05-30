@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect, flash
-from View import UserId, Login, Register, ViewDemands, ViewCategories
+from View import UserId, Login, ViewDemands, ViewCategories
 from application import App
 from flask_login import LoginManager, login_required,current_user,login_user, logout_user,login_required
 
@@ -19,6 +19,13 @@ def load_user(user_id):
 def index():
     categories = ViewCategories.get_categories()
     demands = ViewDemands.get_demands()
+
+    return render_template('index.html', cats=categories, dems=demands)
+@app.route("/<id>")
+@login_required
+def index_by(id):
+    categories = ViewCategories.get_categories()
+    demands = ViewCategories.get_by_categories(id)
     return render_template('index.html', cats=categories, dems=demands)
 
 @app.route("/login", methods=['POST','GET'])
@@ -39,41 +46,29 @@ def login():
 #@app.route('/user/')
 #def profile(): pass
 
-@app.route("/register", methods = ['POST'])
+@app.route("/register", methods = ['GET','POST'])
 def register():
-    r_json = request.json
-    first_name = r_json['first_name']
-    last_name = r_json['last_name']
-    email = r_json['email']
-    cpf =r_json['cpf']
-    psw =r_json['psw'] 
-    #print (request.json)
-    return Register.register(user, email, cpf, psw)
+    if request.method == 'POST':
+        r_json = request.json
+        first_name = r_json['first_name']
+        last_name = r_json['last_name']
+        email = r_json['email']
+        cpf =r_json['cpf']
+        psw =r_json['psw'] 
+        #print (request.json)
+        return Login.register(user, email, cpf, psw)
+    else:
+        return render_template('register.html')
 
-@app.route("/demands", methods = ['GET'])
-def demands():
-    return ViewDemands.get_demands()
 
-@app.route("/categories", methods = ['GET'])
-def categories():
-    return 
+@app.route("/demand/<id>", methods = ['GET'])
+def ViewDemand(id):
+    content = ViewDemands.get_demand(int(id))
+    return render_template('product.html', content=content)
 
-@app.route("/categories", methods = ['POST'])
-def category():
-    r_json = request.json
-    id_cat = r_json['id']
-    return ViewCategories.get_by_categories(id_cat)
+
 
 @app.route("/cadastrodemanda", methods = ['GET'])
 @login_required
 def cadastrodemandas():
     return  render_template('cadservice.html')
-
-# @app.route("/cadastrodemanda", methods = ['POST'])
-# @login_required
-# def cadastrodemandas():
-#     r_json = request.json
-#     id_cat = r_json['']##request aqui
-#     return ViewCategories.get_by_categories(id_cat)
-    
-# #https://bastter.com/mercado/forum/873006/extra-22--projeto-web-parte-3--fazendo-upload-de-arquivos-de-imagens-e-renderizando-as-imagens

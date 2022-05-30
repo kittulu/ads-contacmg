@@ -16,7 +16,6 @@ class Login:
                 return query
         return False
 
-class Register:
     def register(first_name, last_name, email, cpf, psw):
         db = DB.db()
         #MySQLdb._exceptions.IntegrityError: (1062, "Duplicate entry 'admin' for key 'username'")
@@ -34,7 +33,6 @@ class Register:
                 return "cpf Exists"
             return "ERRU"
 
-
 class ViewDemands:
     def get_demands():
 
@@ -43,8 +41,11 @@ class ViewDemands:
             .add_columns(User.first_name)\
             .join(Category, Category.id==Demand.category_id)\
             .add_columns(Category.name_cat)\
-            .with_entities(Demand.demand_name, Demand.desc, User.first_name,Category.name_cat).all()
+            .with_entities(Demand.id,Demand.demand_name, Demand.desc, User.first_name,Category.name_cat).all()
         return query
+    def get_demand(id):
+        query = Demand.query.filter(Demand.id == id)
+        return query[0]
 
     def post_demand():
         pass
@@ -56,6 +57,6 @@ class ViewCategories:
 
     def get_by_categories(id_cat):
         query = Demand.query.filter(Demand.category_id == id_cat).all()##
-        print (query)
-        return jsonify(query)
+    
+        return query
     
