@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!--demanda separadas-->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,25 +52,25 @@
     <!-- header start -->
     <header>
         <div class="back-links">
-            <a href="shop.html">
+            <a href="/">
                 <i class="iconly-Arrow-Left icli"></i>
                 <div class="content">
-                    <h2>Serviço</h2>
+                    <h2>Detalhes</h2>
                 </div>
             </a>
         </div>
         <div class="header-option">
-            <ul>
+            <!--<ul>
                 <li>
                     <a href="#"><img src="/assets/svg/share-2.svg" class="img-fluid" alt=""></a>
                 </li>
                 <li>
-                    <a href="wishlist.html"><i class="iconly-Heart icli"></i></a>
+                    <a href=""><i class="iconly-Heart icli"></i></a>
                 </li>
                 <li>
                     <a href="cart.html"><i class="iconly-Buy icli"></i></a>
                 </li>
-            </ul>
+            </ul>-->
         </div>
     </header>
     <!-- header end -->
@@ -81,19 +81,16 @@
         <div class="home-slider slick-default theme-dots ratio_asos overflow-hidden">
             <div>
                 <div class="home-img">
-                    <img src="/assets/images/full-img/1.jpg" class="img-fluid bg-img" alt="">
-                </div>
-            </div>
-            <div>
-                <div class="home-img">
-                    <img src="/assets/images/full-img/2.jpg" class="img-fluid bg-img" alt="">
+                    <img src="/assets/images/uploads/{{curr.img_path}}" class="img-fluid bg-img" alt="">
                 </div>
             </div>
         </div>
         <div class="product-detail-box px-15 pt-2">
             <div class="main-detail">
-                <h2 class="text">{{content.demand_name}}</h2>
-                <h6 class="content-color">{{content.user_id}}</h6>
+                <h2 class="text">{{curr.demand_name}}</h2>
+                <h6 class="content-color">  {{curr.first_name}}</h6>
+                
+                <!--
                 <div class="rating-section">
                     <ul class="ratings">
                         <li><i class="iconly-Star icbo"></i></li>
@@ -104,79 +101,45 @@
                     </ul>
                     <h6 class="content-color">(20 ratings)</h6>
                 </div>
+                -->
             </div>
         </div>
         
         <div class="divider"></div>
         <div class="product-detail-box px-15">
             <h4 class="page-title mb-1">Detalhes do serviço</h4>
-            <h4 class="content-color mb-3">{{content.desc}}</h4>
+            <h4 class="content-color mb-3">{{curr.desc}}</h4>
         </div>
         <div class="divider"></div>
-        <div class="product-detail-box px-15">
-            <h4 class="page-title">Comentario sobre o empregador (24) <a href="#">All Reviews</a></h4>
-            <div class="review-section">
-                <ul>
-                    <li>
-                        <div class="media">
-                            <img src="/assets/images/user/2.png" class="img-fluid" alt="">
-                            <div class="media-body">
-                                <h4>Mark Jacob | 20 Aug, 2021</h4>
-                                <ul class="ratings">
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo empty"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <h4 class="content-color">It's a really cute skirt! I didn't expect to feel so good in a
-                            polyester material. The print is slightly less bright than what is shown in the product
-                            description.</h4>
-                        <div class="review-bottom">
-                            <h6>Size bought: <span class="content-color">S</span></h6>
-                            <div class="liking-sec">
-                                <span class="content-color"><img src="/assets/svg/thumbs-up.svg" class="img-fluid"
-                                        alt="">20</span>
-                                <span class="content-color"><img src="/assets/svg/thumbs-down.svg" class="img-fluid"
-                                        alt="">2</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="media">
-                            <img src="/assets/images/user/3.png" class="img-fluid" alt="">
-                            <div class="media-body">
-                                <h4>Mark Jacob | 20 Aug, 2021</h4>
-                                <ul class="ratings">
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo"></i></li>
-                                    <li><i class="iconly-Star icbo empty"></i></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <h4 class="content-color">It's a really cute skirt! I didn't expect to feel so good in a
-                            polyester material. The print is slightly less bright than what is shown in the product
-                            description.</h4>
-                        <div class="review-bottom">
-                            <h6>Size bought: <span class="content-color">S</span></h6>
-                            <div class="liking-sec">
-                                <span class="content-color"><img src="/assets/svg/thumbs-up.svg" class="img-fluid"
-                                        alt="">20</span>
-                                <span class="content-color"><img src="/assets/svg/thumbs-down.svg" class="img-fluid"
-                                        alt="">2</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-       
+
     </section>
-    <!-- slider end -->
+    <div class="product-detail-box px-15">
+        <h4 class="page-title">Propostas para o serviço (24) <a href="#">All Reviews</a></h4>
+        <div class="review-section">
+            <ul>
+                {% for i in proposal %}
+                <li>
+                    <div class="media">
+                        <img src="/assets/images/uploads/{{i.img_path}}" class="img-fluid" alt="">
+                        <div class="media-body">
+                            <h4>{{i.first_name}} {{i.last_name}} | 20 Aug, 2021</h4>
+                            <ul class="ratings">
+                                <li><i class="iconly-Star icbo"></i></li>
+                                <li><i class="iconly-Star icbo"></i></li>
+                                <li><i class="iconly-Star icbo"></i></li>
+                                <li><i class="iconly-Star icbo"></i></li>
+                                <li><i class="iconly-Star icbo empty"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="review-bottom">
+                    <h4 class="content-color">{{i.desc}}</h4><br>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 
     <div class="divider"></div>
     <!-- related section start -->
@@ -184,107 +147,44 @@
         <div class="title-section px-15">
             <h2>Serviços similares</h2>
         </div>
-        <div class="product-slider slick-default pl-15">
+
             <div>
-                <div class="product-box ratio_square">
-                    <div class="img-part">
-                        <a href="product.html"><img src="/assets/images/products/9.jpg" alt="" class="img-fluid bg-img"></a>
-                        <div class="wishlist-btn">
-                            <i class="iconly-Heart icli"></i>
-                            <i class="iconly-Heart icbo"></i>
-                            <div class="effect-group">
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <ul class="ratings">
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo empty"></i></li>
-                        </ul>
-                        <a href="product.html">
-                            <h4>Blue Denim Jacket</h4>
+                {% for dem in content%}
+
+                <div class="col-12">
+                  <div class="product-inline">
+                    <a href="#">
+                      <img src="/assets/images/products/01.jpg" class="img-fluid" alt="">
+                    </a>
+                    <div class="product-inline-content">
+                      <div>
+                        <a href="/demand/{{dem.id}}">
+                          <h4>{{dem.demand_name}}</h4>
                         </a>
-                        <div class="price">
-                            <h4>$32.00 <del>$35.00</del><span>20%</span></h4>
+                        <h5>{{dem.desc}}</h5>
+        
+                        <div class="price" style='display:none'>
+                          <h4>R$10.00 - R$50.00</h4>
                         </div>
+        
+                      </div>
                     </div>
-                </div>
+                    <div class="wishlist-btn">
+                      <i class="iconly-Heart icli"></i>
+                      <i class="iconly-Heart icbo"></i>
+                      <div class="effect-group">
+                        <span class="effect"></span>
+                        <span class="effect"></span>
+                        <span class="effect"></span>
+                        <span class="effect"></span>
+                        <span class="effect"></span>
+                      </div>
+                    </div>
+                  </div>
             </div>
-            <div>
-                <div class="product-box ratio_square">
-                    <div class="img-part">
-                        <a href="product.html"><img src="/assets/images/products/10.jpg" alt="" class="img-fluid bg-img"></a>
-                        <div class="wishlist-btn">
-                            <i class="iconly-Heart icli"></i>
-                            <i class="iconly-Heart icbo"></i>
-                            <div class="effect-group">
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <ul class="ratings">
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo empty"></i></li>
-                        </ul>
-                        <a href="product.html">
-                            <h4>Preciso de cozinheiro</h4>
-                        </a>
-                        <div class="price">
-                            <h4>cozinheiro para evento/h4>
-                        </div>
-                    </div>
-                </div>
+          {% endfor %}
             </div>
-            <div>
-                <div class="product-box ratio_square">
-                    <div class="img-part">
-                        <a href="product.html"><img src="/assets/images/products/8.jpg" alt="" class="img-fluid bg-img"></a>
-                        <div class="wishlist-btn">
-                            <i class="iconly-Heart icli"></i>
-                            <i class="iconly-Heart icbo"></i>
-                            <div class="effect-group">
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                                <span class="effect"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <ul class="ratings">
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo"></i></li>
-                            <li><i class="iconly-Star icbo empty"></i></li>
-                        </ul>
-                        <a href="product.html">
-                            <h4>Pintor</h4>
-                        </a>
-                        <div class="price">
-                            <h4>pintar quarto</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
     </section>
     <!-- related section end -->
 
@@ -298,10 +198,10 @@
     <div class="fixed-panel">
         <div class="row">
             <div class="col-6">
-                <a href="wishlist.html"><i class="iconly-Heart icli"></i>Favoritar</a>
+                <a href=""><i class="iconly-Heart icli"></i>Favoritar</a>
             </div>
             <div class="col-6">
-                <a href="cart.html" class="theme-color"><i class="iconly-Buy icli"></i>Criar Proposta</a>
+                <a href="/criarproposta/{{curr.id}}" class="theme-color"><i class="icli"></i>Criar Proposta</a>
             </div>
         </div>
     </div>

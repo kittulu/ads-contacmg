@@ -78,7 +78,6 @@
         </a>
       </li>
     {% endfor %}
-
   </ul>
   </section>
   <div class="divider t-12 b-20"></div>
@@ -127,7 +126,7 @@
         <div class="col-12">
           <div class="product-inline">
             <a href="#">
-              <img src="/assets/images/products/01.jpg" class="img-fluid" alt="">
+              <img src="/assets/images/uploads/{{dem.img_path}}" class="img-fluid" alt="">
             </a>
             <div class="product-inline-content">
               <div>
@@ -135,9 +134,11 @@
                   <h4>{{dem.demand_name}}</h4>
                 </a>
                 <h5>{{dem.desc}}</h5>
-                <div class="price">
+
+                <div class="price" style='display:none'>
                   <h4>R$10.00 - R$50.00</h4>
                 </div>
+
               </div>
             </div>
             <div class="wishlist-btn">

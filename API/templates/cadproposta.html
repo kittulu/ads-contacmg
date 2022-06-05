@@ -19,6 +19,30 @@
   <meta name="msapplication-TileImage" content="assets/images/favicon.png"> <!-- -->
   <meta name="msapplication-TileColor" content="#FFFFFF"> <!-- -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- -->
+  <style>
+    textarea {
+    resize: none;
+	display: block;
+	width: 100%;
+	padding: 0.375rem 0.75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0.25rem;
+	-webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+    
+  </style>
 
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
@@ -36,7 +60,7 @@
     <!-- Theme css -->
     <link rel="stylesheet" id="change-link" type="text/css" href="/assets/css/style.css">
 
-</head>
+</head>I
 
 <body>
     <!-- loader strat -->
@@ -52,8 +76,10 @@
         <div class="back-links">
             <a href="/">
                 <i class="iconly-Arrow-Left icli"></i>
-                <div class="content">
-                    <h2>Adicionar Serviço</h2>
+                <div class="content"><style>
+                   
+                    </style>
+                    <h2>Criar Proposta</h2>
                 </div>
             </a>
         </div>
@@ -61,38 +87,19 @@
     <!-- header end -->
 
     <!-- start -->
-    <form method="post" enctype = "multipart/form-data">     
+    <form method="post">     
     <section class="top-space pt-2">
         <div class="address-form-section px-15">             
               <div class="form-floating mb-4">        
-            <input type="text" class="form-control" id="servico" name="name" placeholder="First Name">
+            <input type="text" class="form-control" id="servico" disabled value="{{value.demand_name}}">
             <label for="fname">Serviço</label>   
             </div>
             <div class="form-floating mb-4">                       
-            <input type="text" class="form-control" id="lname" name="desc"placeholder="Last Name">
-                <label for="lname">Descrição</label>              
-            </div>          
-            <div class="form-floating mb-4">
-                <select class="form-select" id="floatingSelect1" name="cat" aria-label="Floating label select example">
-                    <option selected disabled value="1">Selecione a opção</option>
-                    <option value="2">Beleza</option>
-                    <option value="3">Confeitaria</option>
-                    <option value="4">Gerais</option>
-                    <option value="5">Manutenção</option>
-                    <option value="6">Midia</option>
-                    <option value="7">Limpeza</option>
-                </select>
-                <label for="floatingSelect1">Categoria</label>
-            </div>     
-            <div class="form-floating mb-4">
-                <input type="text" class="form-control" id="seven" name="endereco" placeholder="Rua dos bobos, n° 0">
-                <label for="seven">Endereço</label>
-            </div>  
-            <div class="form-floating mb-4">
-                <div class="">
-                  <input type="file" value="Selecione uma imagem." name="file" class="form-control" placeholder="Selecione uma imagem" />
-                </div>
-            </div> 
+            <textarea  name="desc" style="resize: none" rows="10" cols="50">Descreva aqui sua proposta...</textarea>  
+            <label for="fname">Proposta</label>              
+            </div>
+            
+            
             {% if error %}
             <div class="">
             <small style="color: #00f56e ;">{{error}}</small>

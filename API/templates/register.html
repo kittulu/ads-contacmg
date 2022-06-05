@@ -19,7 +19,6 @@
     <meta name="msapplication-TileImage" content="assets/images/favicon.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
@@ -58,7 +57,7 @@
     <!-- login section start -->
     <section class="form-section px-15 top-space section-b-space">
         <h1>Ei, <br>Cadastre-se</h1>
-        <form method="POST">
+        <form method="POST" enctype = "multipart/form-data">
             <div class="form-floating mb-4">
                 <input type="text" class="form-control" name="name" id="one" placeholder="Nome" required>
                 <label for="one">Nome</label>
@@ -73,7 +72,9 @@
                 <label>E-mail</label>
             </div>  
             <div class="form-floating mb-4">
-                <input type="text" class="form-control" name="cpf" placeholder="Telefone" required>
+                <input type="text" minlength='11' mask='' maxlength='14' class="form-control" id='cpfcnpj' name="cpfcnpj" placeholder="CPF/CNPJ" required>
+               
+               
                 <label>CPF</label>
             </div> 
             <div class="form-floating mb-4">
@@ -83,6 +84,12 @@
                     <i id="eyeIcon" class="iconly-Hide icli hide"></i>
                 </div>
             </div>
+            
+            <div class="form-floating mb-4">
+                <input type="file" class="form-control" name="file" placeholder=".png .gif .jpeg">
+                <label>Foto Perfil</label>
+            </div>  
+
             {% if error %}
             <div class="">
             <small style="color: #ff0000 ;">{{error}}</small>

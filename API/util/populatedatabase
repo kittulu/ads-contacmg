@@ -1,18 +1,25 @@
-
-
 queryUser = """
-INSERT INTO USER (first_name, last_name, email, cpf, psw) VALUES
-('AAAA','AAAAA','a@gmail.com','00000000000','00000'),
-('BBBB','BBBBB','b@gmail.com','11111111111','11111'),
-('CCCC','CCCCC','c@gmail.com','22222222222','22222'),
-('DDDD','DDDDD','d@gmail.com','33333333333','33333'),
-('EEEE','EEEEE','e@gmail.com','44444444444','44444'),
-('FFFF','FFFFF','f@gmail.com','55555555555','55555');
+INSERT INTO USER (first_name, last_name, email, cpf, psw, img_id) VALUES
+('Alberto','Alves','alberto@gmail.com','00000000000','12345',10),
+('Berta','Bino','berta@gmail.com','11111111111','12345',11),
+('Carlos','Carvalho','carlos@gmail.com','22222222222','12345',12),
+('Denise','Dutra','denise@gmail.com','33333333333','12345',13),
+('Efesio','Eustacio','efesio@gmail.com','44444444444','12345',14),
+('Frida','Franco','frida@gmail.com','55555555555','12345',15);
 """
+
+
+
+    name_cat:str
+    desc:str
+    img_id:int
 queryCategory = """
-INSERT INTO CATEGORY (name_cat, desc) VALUES
-('ELÉTRICO','Sistemas Elétricos, manutenção de rede elétrica, tomadas, e afins'),
-('HIDRO','Encanamento, torneiras, instalação de caixa d'agua, e afins'),
-('TECNOLÓGICO','Demandas manutenção')
+INSERT INTO CATEGORY (name_cat, desc, img_id) VALUES
+('ELÉTRICO','Sistemas Elétricos, manutenção de rede elétrica, tomadas, e afins',1),
+('HIDRO','Encanamento, torneiras, instalação de caixa d'agua, e afins',2),
+('TECNOLÓGICO','Demandas manutenção',3)
+('TECNOLÓGICO','Demandas manutenção',4)
+('TECNOLÓGICO','Demandas manutenção',5)
+
 """
 
