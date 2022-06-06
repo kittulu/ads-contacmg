@@ -72,16 +72,19 @@
             <input type="text" class="form-control" id="lname" name="desc"placeholder="Last Name">
                 <label for="lname">Descrição</label>              
             </div>          
-            <div class="form-floating mb-4">
-                <select class="form-select form-control" id="floatingSelect1" name="cat" required aria-label="Floating label select example">
-                    <option disabled selected value="">Selecione a opção</option>
-                    <option value="1">Manutenção</option>
+            <div class="form-floating mb-4" style="text-transform:uppercase ;" >
+                <select class="form-select form-control" style="text-transform:uppercase ;" id="floatingSelect1" name="cat" required aria-label="Floating label select example">
+                    <option disabled selected value="" style="text-transform:uppercase ;" >Selecione a opção</option>
+                {% for cat in cats %}
+                    <option style="text-transform:uppercase ;" value="{{cat.id}}">{{cat.name_cat}}</option>
+                {% endfor %}
+<!--                <option value="1">Manutenção</option>
                     <option value="2">Gerais</option>
                     <option value="3">Limpeza</option>
                     <option value="4">Confeitaria</option>
                     <option value="5">Beleza</option>
                     <option value="6">Midia</option>
-                    <option value="7">Outros</option>
+                    <option value="7">Outros</option> -->
                 </select>
                 <label for="floatingSelect1">Categoria</label>
             </div>     

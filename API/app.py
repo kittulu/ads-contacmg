@@ -108,6 +108,8 @@ def ViewDemand(id):
 @app.route("/cadastrodemanda", methods = ['GET','POST'])
 @login_required
 def cadastrodemandas():
+    categories = ViewCategories.get_categories()
+
     if request.method == 'POST':
         demand_name = request.form.get('name')
         desc = request.form.get('desc')
@@ -120,21 +122,20 @@ def cadastrodemandas():
                 reg = ViewDemands.post_demand(demand_name,desc,category_id,user_id,img)
                 f.save(dst=f"static/assets/images/uploads/{img}")
             else:
-                return render_template('cadservice.html', error="Imagem inválida", cor='#ff0000')
+                return render_template('cadservice.html', cats=categories, error="Imagem inválida", cor='#ff0000')
         else:
             img = None
             reg = ViewDemands.post_demand(demand_name,desc,category_id,user_id,img)
         if reg == 'shuu':
-            return render_template('cadservice.html', error="Cadastrado com sucesso!", cor='#00f56e')
+            return render_template('cadservice.html', cats=categories, error="Cadastrado com sucesso!", cor='#00f56e')
         else:
-            return render_template('cadservice.html', error="Algo deu errado, tente novamente.", cor='#ff0000')
+            return render_template('cadservice.html', cats=categories, error="Algo deu errado, tente novamente.", cor='#ff0000')
     else:
-        return  render_template('cadservice.html', error='', cor='')
+        return  render_template('cadservice.html', error='', cor='',cats=categories)
 
 @app.route("/criarproposta/<id>", methods = ['GET','POST'])
 @login_required
 def criarproposta(id):
-
     if request.method == 'POST':
         desc = request.form.get('desc')
         user_id = current_user.id
