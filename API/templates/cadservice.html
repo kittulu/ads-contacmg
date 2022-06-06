@@ -73,8 +73,8 @@
                 <label for="lname">Descrição</label>              
             </div>          
             <div class="form-floating mb-4">
-                <select class="form-select" id="floatingSelect1" name="cat" aria-label="Floating label select example">
-                    <option selected disabled value="0">Selecione a opção</option>
+                <select class="form-select form-control" id="floatingSelect1" name="cat" required aria-label="Floating label select example">
+                    <option disabled selected value="">Selecione a opção</option>
                     <option value="1">Manutenção</option>
                     <option value="2">Gerais</option>
                     <option value="3">Limpeza</option>
@@ -95,10 +95,10 @@
                 </div>
             </div> 
             {% if error %}
-            <div class="">
-            <small style="color: #00f56e ;">{{error}}</small>
-            </div>
-            <br>
+                <div class="">
+                <small style="color: '{{cor}}';">{{error}}</small> 
+                </div>
+                <br>
             {% endif %}
         </div>
                 

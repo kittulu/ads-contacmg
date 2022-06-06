@@ -120,16 +120,16 @@ def cadastrodemandas():
                 reg = ViewDemands.post_demand(demand_name,desc,category_id,user_id,img)
                 f.save(dst=f"static/assets/images/uploads/{img}")
             else:
-                return render_template('cadservice.html', error="Imagem inválida")
+                return render_template('cadservice.html', error="Imagem inválida", cor='#ff0000')
         else:
             img = None
             reg = ViewDemands.post_demand(demand_name,desc,category_id,user_id,img)
         if reg == 'shuu':
-            return render_template('cadservice.html', error="Cadastrado com sucesso!")
+            return render_template('cadservice.html', error="Cadastrado com sucesso!", cor='#00f56e')
         else:
-            return render_template('cadservice.html', error="Algo deu errado, tente novamente.")
+            return render_template('cadservice.html', error="Algo deu errado, tente novamente.", cor='#ff0000')
     else:
-        return  render_template('cadservice.html')
+        return  render_template('cadservice.html', error='', cor='')
 
 @app.route("/criarproposta/<id>", methods = ['GET','POST'])
 @login_required
@@ -141,7 +141,7 @@ def criarproposta(id):
         demand_id = id
         ViewDemands.post_proposal(desc, demand_id, user_id)
         returnvalue = ViewDemands.get_demand(int(id))
-        return render_template('cadproposta.html', error="Cadastrado com sucesso!", value=returnvalue)
+        return render_template('cadproposta.html', error="Cadastrado com sucesso!",  value=returnvalue)
     else:
         returnvalue = ViewDemands.get_demand(int(id))
         print(returnvalue)

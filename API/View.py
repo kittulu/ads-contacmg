@@ -63,6 +63,7 @@ class ViewDemands:
         query = Demand(demand_name=demand_name,desc=desc,category_id=category_id,user_id=user_id,img_path = image)
         db.session.add(query)
         db.session.commit()
+        return 'shuu'
 
     def post_proposal(desc,demand_id,user_id):
         db = DB.db()
