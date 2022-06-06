@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, flash
 from View import UserId, Login, ViewDemands, Images, ViewCategories
 from application import App
 from flask_login import LoginManager, login_required,current_user,login_user, logout_user,login_required
-import random, string
+import random, string, os
 
 app = App.app()
 app.secret_key = 'Innalhamdulillah.nahmaduhu.taalanastainubihi.wanastagfiruh!'
@@ -11,6 +11,15 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 app.config['MAX_CONTENT_LENGTH'] = 160 * 1000 * 1000
 app.config['UPLOAD_FOLDER'] = "static/assets/images/upload"
+ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg'}
+
+def take_extension(filename):
+    arquivo, extensao = os.path.splitext(filename.filename)
+    return extensao
+
+def allowed_file(filename):
+    return '.' in filename and \
+   filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def name_gen():
     return ''.join((random.choice(string.ascii_letters + string.digits) for i in range(16)))
@@ -57,6 +66,8 @@ def login():
 #@app.route('/user/')
 #def profile(): pass
 
+
+
 @app.route("/register", methods = ['GET','POST'])
 def register():
     if request.method == 'POST':
@@ -65,12 +76,17 @@ def register():
         email = request.form.get('email')
         cpf = request.form.get('cpfcnpj')
         psw = request.form.get('psw') 
-        img= name_gen()
         f = request.files.get('file')
-        f.save(dst=f"static/assets/images/uploads/{img}")
-        
-        
-        reg = Login.register(first_name,last_name, email, cpf, psw, img)
+        img= name_gen()+take_extension(f)
+        if f:
+            if allowed_file(f.filename):
+                reg = Login.register(first_name,last_name, email, cpf, psw, img)
+                f.save(dst=f"static/assets/images/uploads/{img}")
+            else:
+                return render_template('register.html', error='Imagem Inválida')
+        else:
+            img = None
+            reg = Login.register(first_name,last_name, email, cpf, psw, img)
         if reg == 'shuu':
             return redirect("/login", code=302)
         else:

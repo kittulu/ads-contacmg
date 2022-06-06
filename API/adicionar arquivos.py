@@ -5,9 +5,9 @@ from application import App
 
 app = App.app()
 UPLOAD_FOLDER = 'uploads/'
-ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 160 * 1000 * 1000
+ALLOWED_EXTENSIONS = { 'png', 'jpg', 'jpeg'}
 
 def allowed_file(filename):
     return '.' in filename and \

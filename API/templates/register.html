@@ -72,10 +72,8 @@
                 <label>E-mail</label>
             </div>  
             <div class="form-floating mb-4">
-                <input type="text" minlength='11' mask='' maxlength='14' class="form-control" id='cpfcnpj' name="cpfcnpj" placeholder="CPF/CNPJ" required>
-               
-               
-                <label>CPF</label>
+                <input type="text" onKeyPress="MascaraGenerica(this, 'CPFCNPJ');" minlength='11' maxlength='18' class="form-control" id='cpfcnpj' name="cpfcnpj" placeholder="CPF/CNPJ" required>
+              <label>CPF / CNPJ </label>
             </div> 
             <div class="form-floating mb-4">
                 <input type="password" id="txtPassword" name="psw" class="form-control" placeholder="Senha" required> 
@@ -84,10 +82,11 @@
                     <i id="eyeIcon" class="iconly-Hide icli hide"></i>
                 </div>
             </div>
-            
-            <div class="form-floating mb-4">
-                <input type="file" class="form-control" name="file" placeholder=".png .gif .jpeg">
+          
+            <div class="form-floating mb-4 pt-1">
+                <input type="file" class="form-control btnToggle" name="file" placeholder=".png .gif .jpeg">
                 <label>Foto Perfil</label>
+                <small>Imagens tipo png, jpeg ou jpg</small>
             </div>  
 
             {% if error %}
@@ -134,6 +133,10 @@
 
     <!-- Bootstrap js-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    
+    <!-- Mascaras cpf/cnpj-->
+    <script src="assets/js/mask.js"></script>
 
     <!-- Slick js-->
     <script src="assets/js/slick.js"></script>
