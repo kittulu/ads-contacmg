@@ -69,7 +69,7 @@
   <!-- category start -->
   <section class="category-section top-space">
 
-    <ul class="category-slide">
+    <ul class="category-slider">
     {% for cat in cats %}
       <li>
         <a href="/{{cat.id}}" class="category-box">
@@ -92,8 +92,8 @@
           <img src="/assets/images/home-slider/slide1.jpg" class="img-fluid bg-img" alt="">
           <div class="slider-content">
             <div>
-              <h2>MELHORES AVALIAÇÕES</h2>
-              <a href="#" class="btn btn-solid">Contrate agora!</a>
+              <h2>A VAGA É PRA VOCÊ?</h2>
+              <a href="/1" class="btn btn-solid">Candidate-se agora!</a>
             </div>
           </div>
         </div>
@@ -103,8 +103,8 @@
           <img src="/assets/images/home-slider/slide2.jpg" class="img-fluid bg-img" alt="">
           <div class="slider-content">
             <div>
-              <h2>SUA CASA LIMPA</h2>
-              <a href="#" class="btn btn-solid">Contrate agora!</a>
+              <h2>QUER COMPLEMENTAR<br> SUA RENDA?</h2>
+              <a href="/3" class="btn btn-solid">Dê sua proposta</a>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@
 
         <div class="col-12">
           <div class="product-inline">
-            <a href="#">
+            <a href="demand/{{dem.id}}">
               <img src="/assets/images/uploads/{{dem.img_path}}" class="img-fluid" alt="">
             </a>
             <div class="product-inline-content">
@@ -141,7 +141,7 @@
 
               </div>
             </div>
-            <div class="wishlist-btn">
+            <div class="wishlist-btn" style="display: none;">
               <i class="iconly-Heart icli"></i>
               <i class="iconly-Heart icbo"></i>
               <div class="effect-group">
@@ -154,6 +154,8 @@
             </div>
           </div>
 	</div>
+  
+
   {% endfor %}
 
       </div>

@@ -43,11 +43,13 @@ def index_by(id):
     if id == "0":
         categories = ViewCategories.get_categories()
         demands = ViewDemands.get_demands()
+        title = 'Todas as Categorias'
     else:
+        id=int(id)
         categories = ViewCategories.get_categories()
         demands = ViewCategories.get_by_categories(id)
-
-    return render_template('index_all.html', cats=categories, dems=demands)
+        title = categories[(id-1)]
+    return render_template('index_all.html', cats=categories, dems=demands, title=title)
 
 @app.route("/login", methods=['POST','GET'])
 def login():
@@ -109,17 +111,25 @@ def cadastrodemandas():
     if request.method == 'POST':
         demand_name = request.form.get('name')
         desc = request.form.get('desc')
-        category_id = int(request.form.get('cat'))-1
+        category_id = int(request.form.get('cat'))
         user_id = current_user.id
-        img= name_gen()
         f = request.files.get('file')
-        f.save(dst=f"static/assets/images/uploads/{img}")
-        print(request.form)
-        reg = ViewDemands.post_demand(demand_name,desc,category_id,user_id,img)
-        return render_template('cadservice.html', error="Cadastrado com sucesso!")
+        img= name_gen()+take_extension(f)
+        if f:
+            if allowed_file(f.filename):
+                reg = ViewDemands.post_demand(demand_name,desc,category_id,user_id,img)
+                f.save(dst=f"static/assets/images/uploads/{img}")
+            else:
+                return render_template('cadservice.html', error="Imagem inválida")
+        else:
+            img = None
+            reg = ViewDemands.post_demand(demand_name,desc,category_id,user_id,img)
+        if reg == 'shuu':
+            return render_template('cadservice.html', error="Cadastrado com sucesso!")
+        else:
+            return render_template('cadservice.html', error="Algo deu errado, tente novamente.")
     else:
         return  render_template('cadservice.html')
-
 
 @app.route("/criarproposta/<id>", methods = ['GET','POST'])
 @login_required

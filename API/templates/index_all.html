@@ -69,7 +69,7 @@
   <!-- category start -->
   <section class="category-section top-space">
 
-    <ul class="category-slide">
+    <ul class="category-slider">
     {% for cat in cats %}
       <li>
         <a href="/{{cat.id}}" class="category-box">
@@ -83,8 +83,7 @@
   </section>
   <div class="divider t-12 b-20"></div>
   <!-- category end -->
-
-
+  <h1>{{title.name_cat}}<h1>
   
   <!-- Serviços populares start -->
   <section class="deals-section px-15 pt-0">
@@ -98,7 +97,7 @@
 
         <div class="col-12">
           <div class="product-inline">
-            <a href="#">
+            <a href="demand/{{dem.id}}">
               <img src="/assets/images/uploads/{{dem.img_path}}" class="img-fluid" alt="">
             </a>
             <div class="product-inline-content">
@@ -107,12 +106,12 @@
                   <h4>{{dem.demand_name}}</h4>
                 </a>
                 <h5>{{dem.desc}}</h5>
-                <div class="price">
+                <div class="price" style='display:none'>
                   <h4>R$55.00 <del>$45.00</del><span>-R$10</span></h4>
                 </div>
               </div>
             </div>
-            <div class="wishlist-btn">
+            <div class="wishlist-btn" style="display: none;">
               <i class="iconly-Heart icli"></i>
               <i class="iconly-Heart icbo"></i>
               <div class="effect-group">
