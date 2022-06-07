@@ -1,6 +1,4 @@
-# import sys
-# sys.path.append("/home/kitullu/Documentos/ads-contacmg/API/")
-# from models.UserModel import db
-# from sqlalchemy import *
+#init no terminal python
 
-# db.create_all()
+from Model import db
+fb.create_all()
