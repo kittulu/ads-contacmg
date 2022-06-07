@@ -10,7 +10,7 @@
     <meta name="author" content="ContaComigo">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="assets/images/icon.png" type="image/x-icon" />
-    <title>ContaComigo!</title>
+    <title>ContaComigo</title>
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
     <meta name="theme-color" content="#ff4c3b" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -19,7 +19,6 @@
     <meta name="msapplication-TileImage" content="assets/images/favicon.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <!--Google font-->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
@@ -47,40 +46,60 @@
     </div>
     <!-- loader end -->
 
+
     <!-- top bar start -->
     <div class="topbar-section">
-        <a href="index.php"><img src="assets/images/logomain.png" class="img-fluid main-logo" alt=""></a>
+        <a href="index.php"><img src="assets/images/logomain.png" class="img-fluid main-logo" alt=""> </a>
     </div>
     <!-- top bar end -->
 
 
     <!-- login section start -->
     <section class="form-section px-15 top-space section-b-space">
-        <h1>Ei, <br>faça seu login</h1>
-        <form method="POST">
+        <h1>Ei, <br>Cadastre-se</h1>
+        <form method="POST" enctype = "multipart/form-data">
             <div class="form-floating mb-4">
-                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
-                <label for="one">E-mail</label>
+                <input type="text" class="form-control" name="name" id="one" placeholder="Nome" required>
+                <label for="one">Nome</label>
+            </div>
+
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control" name="lname" id="one" placeholder="Sobrenome" required>
+                <label for="one">Sobrenome</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="email" class="form-control" name="email" placeholder="Telefone" required>
+                <label>E-mail</label>
             </div>  
-            <div class="form-floating mb-2">
-                <input type="password" class="form-control" name="psw" id="psw" placeholder="Senha">
-                <label for="two">Senha</label>
+            <div class="form-floating mb-4">
+                <input type="text" onKeyPress="MascaraGenerica(this, 'CPFCNPJ');" minlength='11' maxlength='18' class="form-control" id='cpfcnpj' name="cpfcnpj" placeholder="CPF/CNPJ" required>
+              <label>CPF / CNPJ </label>
+            </div> 
+            <div class="form-floating mb-4">
+                <input type="password" id="txtPassword" name="psw" class="form-control" placeholder="Senha" required> 
+                <label>Senha</label>
+                <div id="btnToggle" class="password-hs">
+                    <i id="eyeIcon" class="iconly-Hide icli hide"></i>
+                </div>
             </div>
-            <div class="text-end mb-4">
-                <a href="#" class="theme-color">Esqueceu sua senha?</a>
-            </div>
+          
+            <div class="form-floating mb-4 pt-1">
+                <input type="file" class="form-control btnToggle" name="file" placeholder=".png .gif .jpeg">
+                <label>Foto Perfil</label>
+                <small>Imagens tipo png, jpeg ou jpg</small>
+            </div>  
+
             {% if error %}
             <div class="">
             <small style="color: #ff0000 ;">{{error}}</small>
             </div>
             <br>
             {% endif %}
-            <input type="submit" value="enviar" class="btn btn-solid w-100" class="form-control">
+            <input type="submit" value="Cadastre-se" class="btn btn-solid w-100" >
         </form>
-        <!--LOGIN COM REDeS SOCIAIS-->
-        <!-- 
-            <div class="or-divider">
-            <span>Ou faça login com</span>
+
+        <div class="or-divider">
+            <span>Ou cadastre-se com</span>
         </div>
         <div class="social-auth">
             <ul>
@@ -94,10 +113,10 @@
                     <a href="#"><img src="assets/images/social/apple.png" class="img-fluid" alt=""></a>
                 </li>
             </ul>
-        </div> -->
+        </div>
         <div class="bottom-detail text-center mt-3">
-            <h4 class="content-color">Se você é novo, <a class="title-color text-decoration-underline"
-                    href="/register">Crie uma conta</a></h4>
+            <h4 class="content-color">Você já tem uma conta? <a class="title-color text-decoration-underline"
+                    href="login.html">Faça login</a></h4>
         </div>
     </section>
     <!-- login section end -->
@@ -115,8 +134,15 @@
     <!-- Bootstrap js-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 
+    
+    <!-- Mascaras cpf/cnpj-->
+    <script src="assets/js/mask.js"></script>
+
     <!-- Slick js-->
     <script src="assets/js/slick.js"></script>
+
+    <!-- password hide show js -->
+    <script src="assets/js/password-hs.js"></script>
 
     <!-- Filter js -->
     <script src="assets/js/filter.js"></script>
