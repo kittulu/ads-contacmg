@@ -76,7 +76,11 @@
                 <select class="form-select form-control" style="text-transform:uppercase ;" id="floatingSelect1" name="cat" required aria-label="Floating label select example">
                     <option disabled selected value="" style="text-transform:uppercase ;" >Selecione a opção</option>
                 {% for cat in cats %}
+<<<<<<< HEAD
                     <option style="" value="{{cat.id}}">{{cat.name_cat.upper()}}</option>
+=======
+                    <option style="text-transform:uppercase ;" value="{{cat.id}}">{{cat.name_cat}}</option>
+>>>>>>> 163bc9a107b516543e0aa8f68b075d3148978898
                 {% endfor %}
 <!--                <option value="1">Manutenção</option>
                     <option value="2">Gerais</option>
@@ -99,7 +103,11 @@
             </div> 
             {% if error %}
                 <div class="">
+<<<<<<< HEAD
                 <small style="color: {{cor}};">{{error}}</small> 
+=======
+                <small style="color: '{{cor}}';">{{error}}</small> 
+>>>>>>> 163bc9a107b516543e0aa8f68b075d3148978898
                 </div>
                 <br>
             {% endif %}
