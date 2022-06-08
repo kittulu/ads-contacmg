@@ -100,20 +100,12 @@ def register():
 @app.route("/demand/<id>", methods = ['GET'])
 def ViewDemand(id):
     current = ViewDemands.get_demand(id)
-<<<<<<< HEAD
     content = ViewDemands.get_demands()[3:5]
 
     proposal = ViewDemands.get_proposal(int(id))
     print(proposal)
     return render_template('product.html', content=content, proposal=proposal, curr= current)
 
-=======
-    content = ViewDemands.get_demands()
-    proposal = ViewDemands.get_proposal(int(id))
-    print(proposal)
-    return render_template('product.html', content=content, proposal=proposal, curr= current)
-
->>>>>>> 163bc9a107b516543e0aa8f68b075d3148978898
 @app.route("/cadastrodemanda", methods = ['GET','POST'])
 @login_required
 def cadastrodemandas():
