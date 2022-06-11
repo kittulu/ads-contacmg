@@ -75,6 +75,7 @@ def register():
     if request.method == 'POST':
         first_name = request.form.get('name')
         last_name = request.form.get('lname')
+        telefone = request.form.get('telefone')
         email = request.form.get('email')
         cpf = request.form.get('cpfcnpj')
         psw = request.form.get('psw') 
@@ -82,13 +83,13 @@ def register():
         img= name_gen()+take_extension(f)
         if f:
             if allowed_file(f.filename):
-                reg = Login.register(first_name,last_name, email, cpf, psw, img)
+                reg = Login.register(first_name,last_name, telefone, email, cpf, psw, img)
                 f.save(dst=f"static/assets/images/uploads/{img}")
             else:
                 return render_template('register.html', error='Imagem Inválida')
         else:
             img = None
-            reg = Login.register(first_name,last_name, email, cpf, psw, img)
+            reg = Login.register(first_name,last_name, telefone, email, cpf, psw, img)
         if reg == 'shuu':
             return redirect("/login", code=302)
         else:

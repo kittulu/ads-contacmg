@@ -19,6 +19,7 @@ class User(db.Model):
     id:int
     first_name:str
     last_name:str
+    telefone:str
     email:str
     cpf:str
     psw:str
@@ -28,6 +29,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(80), nullable=False)
     last_name = db.Column(db.String(80), nullable=False)
+    telefone = db.Column(db.String(14), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     cpf = db.Column(db.String(11), unique=True, nullable=False)
     psw = db.Column(db.String(11), nullable=False)

@@ -65,8 +65,14 @@
                 <input type="text" class="form-control" name="lname" id="one" placeholder="Sobrenome" required>
                 <label for="one">Sobrenome</label>
             </div>
+            
             <div class="form-floating mb-4">
-                <input type="email" class="form-control" name="email" placeholder="Telefone" required>
+                <input type="phone" class="form-control" name="telefone" placeholder="Telefone" onKeyPress="MascaraGenerica(this, 'TELEFONE');">
+                <label>Telefone</label>
+            </div> 
+
+            <div class="form-floating mb-4">
+                <input type="email" class="form-control" name="email" placeholder="email" required>
                 <label>E-mail</label>
             </div>  
             <div class="form-floating mb-4">
