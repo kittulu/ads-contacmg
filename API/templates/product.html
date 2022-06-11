@@ -114,28 +114,23 @@
 
     </section>
     <div class="product-detail-box px-15">
-        <h4 class="page-title">Propostas para o serviço (24) <a href="#">All Reviews</a></h4>
+        <h4 class="page-title">Propostas para o serviço</h4>
         <div class="review-section">
             <ul>
                 {% for i in proposal %}
+                
                 <li>
                     <div class="media">
                         <img src="/assets/images/uploads/{{i.img_path}}" class="img-fluid" alt="">
                         <div class="media-body">
-                            <h4>{{i.first_name}} {{i.last_name}} | 20 Aug, 2021</h4>
-                            <ul class="ratings">
-                                <li><i class="iconly-Star icbo"></i></li>
-                                <li><i class="iconly-Star icbo"></i></li>
-                                <li><i class="iconly-Star icbo"></i></li>
-                                <li><i class="iconly-Star icbo"></i></li>
-                                <li><i class="iconly-Star icbo empty"></i></li>
-                            </ul>
+                            <h4>{{i.first_name}} {{i.last_name}}</h4> 
                         </div>
                     </div>
                     <div class="review-bottom">
                     <h4 class="content-color">{{i.desc}}</h4><br>
                     </div>
                 </li>
+            
                 {% endfor %}
             </ul>
         </div>

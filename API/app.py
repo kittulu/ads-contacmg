@@ -100,8 +100,7 @@ def register():
 @app.route("/demand/<id>", methods = ['GET'])
 def ViewDemand(id):
     current = ViewDemands.get_demand(id)
-    content = ViewDemands.get_demands()[3:5]
-
+    content = ViewDemands.get_demands()[3:6]
     proposal = ViewDemands.get_proposal(int(id))
     print(proposal)
     return render_template('product.html', content=content, proposal=proposal, curr= current)
