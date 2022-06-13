@@ -1,5 +1,5 @@
-from flask import Flask, request, render_template, redirect, flash
-from View import UserId, Login, ViewDemands, Images, ViewCategories
+from flask import Flask, request, render_template, redirect, flash, url_for
+from View import User, UserId, Login, ViewDemands, Images, ViewCategories, viewMessage
 from application import App
 from flask_login import LoginManager, login_required,current_user,login_user, logout_user,login_required
 import random, string, os
@@ -67,6 +67,10 @@ def login():
 
 #@app.route('/user/')
 #def profile(): pass
+@app.route("/logout", methods = ['GET'])
+def logout():
+    logout_user()
+    return redirect('/',code=302)
 
 
 
@@ -100,11 +104,14 @@ def register():
 
 @app.route("/demand/<id>", methods = ['GET'])
 def ViewDemand(id):
+    user=current_user
     current = ViewDemands.get_demand(id)
-    content = ViewDemands.get_demands()[3:6]
+    print(current[4])
+    
+    content = ViewDemands.get_demands()[2:6]
     proposal = ViewDemands.get_proposal(int(id))
     print(proposal)
-    return render_template('product.html', content=content, proposal=proposal, curr= current)
+    return render_template('product.html', content=content, proposal=proposal, curr= current,user=user)
 
 @app.route("/cadastrodemanda", methods = ['GET','POST'])
 @login_required
@@ -149,6 +156,72 @@ def criarproposta(id):
         print(returnvalue)
         return  render_template('cadproposta.html', value=returnvalue)
 
+
+@app.route("/perfil", methods = ['GET'])
+@login_required
+def perfil():
+    user = current_user
+    return render_template('perfil.html', user=user)
+
+@app.route("/perfil/editar", methods = ['GET','POST'])
+@login_required
+def editarperfil():
+    user = current_user
+    if request.method == 'POST':
+        first_name = request.form.get('name')
+        last_name = request.form.get('lname')
+        telefone = request.form.get('telefone')
+        email = request.form.get('email')
+        cpf = request.form.get('cpfcnpj')
+        psw = request.form.get('psw') 
+        f = request.files.get('file')
+        img=user.img_path
+        if f:
+            if allowed_file(f.filename):
+                reg = Login.update(user.id,first_name,last_name, telefone, email, cpf, psw, img)
+                f.save(dst=f"static/assets/images/uploads/{img}")
+            else:
+                return render_template('profile-setting.html', error='Imagem Inválida', user=user)
+        else:
+            reg = Login.update(user.id, first_name,last_name, telefone, email, cpf, psw, img)
+        if reg == 'shuu':
+            return redirect("/perfil", code=302)
+        else:
+            return render_template('profile-setting.html', error=reg, user=user)
+    else:
+        return render_template('profile-setting.html', code=302, user=user)
+
+
+
+@app.route("/chat/<id>", methods = ['GET','POST'])
+@login_required
+def chat(id):
+    users = current_user
+    user2 = UserId.user_id(id)
+    message=''
+    if request.method == 'POST':
+        content= request.form.get('send')
+        viewMessage.sendmessage(int(users.id), int(user2.id), content)
+        message = viewMessage.get_message(users.id, id)
+        return render_template('chat.html', message=message, users=users, user2=user2)
+    else:
+        message = viewMessage.get_message(int(users.id),int(user2.id))
+        if not message:
+            return render_template('chat.html', message=message, users=users, user2=user2)
+        else:
+            return render_template('chat.html', message=message, users=users, user2=user2)
+
+
+@app.route("/historico", methods = ['GET','POST'])
+@login_required
+def historico():
+    user=current_user
+    users=[]
+    chats=viewMessage.chats(user.id)
+    for i in chats:
+        print (i)
+        users.append(UserId.user_id(i))
+    return render_template('history.html', users=users, user=user)
 ##
 # @app.route("/proposta", methods = ['GET','POST'])
 # @login_required

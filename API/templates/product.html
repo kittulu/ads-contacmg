@@ -116,11 +116,14 @@
     <div class="product-detail-box px-15">
         <h4 class="page-title">Propostas para o serviço</h4>
         <div class="review-section">
+
             <ul>
+                {%if curr.4 == user.id %}
+
                 {% for i in proposal %}
-                
-                <li>
+                <li> 
                     <div class="media">
+
                         <img src="/assets/images/uploads/{{i.img_path}}" class="img-fluid" alt="">
                         <div class="media-body">
                             <h4>{{i.first_name}} {{i.last_name}}</h4> 
@@ -130,8 +133,30 @@
                     <h4 class="content-color">{{i.desc}}</h4><br>
                     </div>
                 </li>
-            
+                <div class="">
+                    <a class="theme-color" href="/chat/{{i.id}}"><span class="status-label">Abrir Chat</span></a>                       
+                </div>
                 {% endfor %}
+
+                {%else%}
+                
+                {% for i in proposal %}
+                <li> 
+                    <div class="media">
+                        <img src="/assets/images/uploads/{{i.img_path}}" class="img-fluid" alt="">
+                        <div class="media-body">
+                            <h4>{{i.first_name}} {{i.last_name}}</h4> 
+                        </div>
+                    </div>
+                    <div class="review-bottom">
+                    <h4 class="content-color">{{i.desc}}</h4><br>
+                    </div>
+                    
+
+                </li>
+                {% endfor %}
+                
+                {%endif%}
             </ul>
         </div>
     </div>
@@ -142,10 +167,8 @@
         <div class="title-section px-15">
             <h2>Serviços similares</h2>
         </div>
-
             <div>
                 {% for dem in content%}
-
                 <div class="col-12">
                   <div class="product-inline">
                     <a href="#">
@@ -156,23 +179,7 @@
                         <a href="/demand/{{dem.id}}">
                           <h4>{{dem.demand_name}}</h4>
                         </a>
-                        <h5>{{dem.desc}}</h5>
-        
-                        <div class="price" style='display:none'>
-                          <h4>R$10.00 - R$50.00</h4>
-                        </div>
-        
-                      </div>
-                    </div>
-                    <div class="wishlist-btn" style="display: none;">
-                      <i class="iconly-Heart icli"></i>
-                      <i class="iconly-Heart icbo"></i>
-                      <div class="effect-group">
-                        <span class="effect"></span>
-                        <span class="effect"></span>
-                        <span class="effect"></span>
-                        <span class="effect"></span>
-                        <span class="effect"></span>
+                        <h5>{{dem.desc}}</h5>       
                       </div>
                     </div>
                   </div>
@@ -192,10 +199,7 @@
     <!-- fixed panel start -->
     <div class="fixed-panel">
         <div class="row">
-            <div class="col-6">
-                <a href=""><i class="iconly-Heart icli"></i>Favoritar</a>
-            </div>
-            <div class="col-6">
+            <div class="col-12">
                 <a href="/criarproposta/{{curr.id}}" class="theme-color"><i class="icli"></i>Criar Proposta</a>
             </div>
         </div>

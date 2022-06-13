@@ -137,8 +137,10 @@ section,
 
 /*=====================
    1.2 Typography CSS start
-==========================*/
+========== ================*/
 body {
+  height: 100%;
+
   font-family: Lato, sans-serif;
   position: relative;
   font-size: 14px;

@@ -1,4 +1,5 @@
 from application import DB
+import datetime
 from flask_sqlalchemy import SQLAlchemy
 from dataclasses import dataclass
 
@@ -106,3 +107,20 @@ class Proposal(db.Model):
 
     def __repr__(self):
         return '<Proposal %r>' % self.desc
+
+
+@dataclass
+class Message(db.Model):
+    id: str = db.Column(db.Integer, primary_key=True)
+    sender_id: int = db.Column(db.Integer)
+    reciever_id: int = db.Column(db.Integer)
+    content: str = db.Column(db.Text)
+    server_timestamp: datetime.datetime = db.Column(
+        db.DateTime, default=datetime.datetime.utcnow
+    )
+
+    def __init__(self, reciever_id, sender_id, content, server_timestamp=None):
+        self.reciever_id = reciever_id
+        self.sender_id = sender_id
+        self.content = content
+        self.server_timestamp = server_timestamp
