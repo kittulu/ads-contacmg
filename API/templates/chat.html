@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <!--controlar as ações do browser a respeito do formato de codificação de caracteres utilizado-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Define em qual versão do Internet Explorer a página deve ser renderizada, evitando falhas devido ao html5.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--define o nível de zoom inicial.-->
+  <meta name="description" content="Autonomos"> <!--descreve o conteúdo de uma página da web. Os mecanismos de pesquisa mostram isso nos resultados da pesquisa quando a meta descrição também inclui as palavras-chave pesquisadas. -->
+  <meta name="keywords" content="ContaComigo"> <!--palavras-chave-->
+  <meta name="author" content="Conta Comigo!"> <!--autor-->
+ <title>Conta Comigo!</title>
+  <meta name="theme-color" content="#ff4c3b" /> <!--tema de cor-->
+  <meta name="apple-mobile-web-app-capable" content="yes"> <!-- -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> <!-- -->
+  <meta name="apple-mobile-web-app-title" content="Conta Comigo!"> <!-- -->
+  <meta name="msapplication-TileImage" content="/assets/images/icon.png"> <!-- -->
+  <meta name="msapplication-TileColor" content="#FFFFFF"> <!-- -->
+
+  
+  <!-- Theme css -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/style copy.css">
+
+  
+  <!-- Theme css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css"> 
+
+</head>
+
+<body>
+  <!-- loader strat 
+  men.sender_id
+  users.id
+                  
+  
+  -->
+  <div class="loader">
+    <span></span>
+    <span></span>
+  </div>
+  <!-- loader end -->
+
+
+
+
+<section class="form-section px-15 top-space section-b-space">
+<div class="page">
+  
+  <div class="chat-container">
+
+            <div class="user-bar">
+              <div class="back">
+                <a href='/historico' class="zmdi zmdi-arrow-left" style="color:white;"></a>
+              </div>
+              <div class="review-section media">
+                <img class='avatar circle' src="/assets/images/uploads/{{user2.img_path}}" alt="">
+              </div>
+              <div class="name">
+                <span>{{user2.first_name}}</span>
+              </div>
+              
+            </div>
+            
+            
+            <div class="conversation">
+              <div class="conversation-container">
+                {%if not message %}
+
+                <div class="message">
+                Nunca trocamos mensagens, seja o primeiro a dizer olá </div>
+                
+                {%else%}
+                {%for men in message%}
+                {%if men.sender_id == users.id %}
+              <div class="message sent">
+                {%else%}
+                <div class="message received">
+                {%endif%}
+                {{men.content}}
+                <span class="metadata">
+                    <span class="time">{{men.server_timestamp.strftime("%d/%m/%y - %H : %M") }}</span><span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" id="msg-dblcheck-ack" x="2063" y="2076"><path d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.88a.32.32 0 0 1-.484.032l-.358-.325a.32.32 0 0 0-.484.032l-.378.48a.418.418 0 0 0 .036.54l1.32 1.267a.32.32 0 0 0 .484-.034l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.88a.32.32 0 0 1-.484.032L1.892 7.77a.366.366 0 0 0-.516.005l-.423.433a.364.364 0 0 0 .006.514l3.255 3.185a.32.32 0 0 0 .484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z" fill="#4fc3f7"/></svg></span>
+                </span>
+              </div>
+              {%endfor%}
+              
+                {%endif%}
+                
+
+                <form class="conversation-compose" href="/chat" method="post">
+                  <input class="input-msg" name="send" id='send' placeholder="Type a message" autocomplete="off" autofocus></input>
+                  <button class="send">
+                    <div class="circle">
+                      <i class="zmdi zmdi-mail-send"></i>
+                    </div>
+                  </button>
+              </form>
+            </div>
+          </div>
+</div></div>
+</section>
+
+
+
+
+  <!-- latest jquery-->
+  <script src="/assets/js/jquery-3.3.1.min.js"></script>
+
+  <!-- Bootstrap js-->
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Slick js-->
+  <script src="/assets/js/slick.js"></script>
+
+  <!-- Slick js-->
+  <script src="/assets/js/homescreen-popup.js"></script>
+
+  <!-- timer js-->
+  <script src="/assets/js/timer.js"></script>
+
+  <!-- offcanvas modal js -->
+  <script src="/assets/js/offcanvas-popup.js"></script>
+
+  <!-- script js -->
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
+
