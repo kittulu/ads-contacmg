@@ -122,20 +122,22 @@
 
                 {% for i in proposal %}
                 <li> 
-                    <div class="media">
+                    <div class="media justify-content-sm-between">
 
                         <img src="/assets/images/uploads/{{i.img_path}}" class="img-fluid" alt="">
                         <div class="media-body">
                             <h4>{{i.first_name}} {{i.last_name}}</h4> 
                         </div>
+                        <div class="m-2">
+                            <a class=" btn btn-outline-danger "  href="/chat/{{i.id}}">Abrir Chat</a>                       
+                        </div>
+                        
                     </div>
-                    <div class="review-bottom">
+                    <div class="review-bottom justify-content-sm-center">
                     <h4 class="content-color">{{i.desc}}</h4><br>
                     </div>
                 </li>
-                <div class="">
-                    <a class="theme-color" href="/chat/{{i.id}}"><span class="status-label">Abrir Chat</span></a>                       
-                </div>
+                
                 {% endfor %}
 
                 {%else%}
